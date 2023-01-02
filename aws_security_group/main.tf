@@ -3,9 +3,9 @@
 # All parameters you can write in variables.tf       #
 # Created by Yevhen Kashuba, december 2022           #
 #----------------------------------------------------#
-/*provider "aws" {
+provider "aws" {
   region = "eu-central-1"
-}*/
+}
 # Get the VPC id
 data "aws_vpc" "default" {
   default = true
@@ -54,6 +54,6 @@ resource "aws_security_group" "main_sg" {
   }
 
   tags = {
-    Name = "${var.name_env}-SG"
+    Name = "${var.name_sg}-SG"
   }
 }

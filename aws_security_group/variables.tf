@@ -1,5 +1,5 @@
 # Set your name of SG in TAGs
-variable "name_env" {
+variable "name_sg" {
   type    = string
   default = "set-your-name"
 }
