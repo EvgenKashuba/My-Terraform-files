@@ -11,14 +11,12 @@ variable "vpc_id" {
 
 # Set ports to allow anyware (0.0.0.0/0) you need in list (example default = ["80", "443"])
 variable "allow_ports_public" {
-  type = list(any)
-  #default = ["80", "443"]
-  default = ["80"]
+  type    = list(any)
+  default = []
 }
 
 # Set ports to allow only in your VPC cidr in list (example default = ["8080", "22"])
 variable "allow_ports_private" {
-  type = list(any)
-  #default = ["80", "443"]
-  default = ["22"]
+  type    = list(any)
+  default = []
 }
