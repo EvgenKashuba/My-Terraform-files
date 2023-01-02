@@ -18,7 +18,7 @@ data "aws_vpc" "selected" {
 
 # Create Security Group for Frontend instance
 resource "aws_security_group" "main_sg" {
-  name   = "allow_traffic"
+  #name   = "allow_traffic"
   vpc_id = data.aws_vpc.selected.id
 
   dynamic "ingress" {
