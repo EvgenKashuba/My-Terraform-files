@@ -6,6 +6,7 @@
 /*provider "aws" {
   region = "eu-central-1"
 }*/
+
 # Get the VPC id
 data "aws_vpc" "default" {
   default = true
@@ -18,8 +19,8 @@ data "aws_vpc" "selected" {
 
 # Create Security Group for Frontend instance
 resource "aws_security_group" "main_sg" {
-  #name   = "allow_traffic"
-  vpc_id = data.aws_vpc.selected.id
+  name_prefix = var.name_sg
+  vpc_id      = data.aws_vpc.selected.id
 
   dynamic "ingress" {
     for_each = var.allow_ports_public
